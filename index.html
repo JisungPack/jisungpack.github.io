@@ -1,8 +1,343 @@
-<html>
+<!-- <html>
   <head>
     <title>github io test page</title>
   </head>
   <body>
     <h3>Hello world!</h3>
   </body>
+</html> -->
+
+
+<!DOCTYPE html>
+<html lang='en'>
+<head>
+<meta charset='UTF-8'>
+<title>Papers</title>
+<style>
+.done {
+    color: gray;
+    text-decoration: line-through;
+}
+.summary-title {
+    font-weight: bold;
+    cursor: pointer;
+}
+details > summary {
+    list-style: none;
+}
+</style>
+</head>
+<body>
+<h1>Papers</h1>
+<script>
+function toggleDone(cb, detailsId) {
+    const details = document.getElementById(detailsId);
+    const label = cb.nextElementSibling;
+    if (cb.checked) {
+        label.classList.add('done');
+        details.style.display = 'none';
+    } else {
+        label.classList.remove('done');
+        details.style.display = 'block';
+    }
+}
+</script>
+<div>
+  <input type='checkbox' id='cb_0' onclick='toggleDone(this, "details_0")'>
+  <label for='cb_0' class='summary-title'>PipeGen: Automated Transformation of a Single-Core Pipeline into a Multicore Pipeline for a Given Memory Consistency Model</label>
+  <details id='details_0'>
+    <p><b>Authors:</b> Zhang, An Qi; Goens, Andr\'{e}s; Oswald, Nicolai; Grosser, Tobias; Sorin, Daniel; Nagarajan, Vijay</p>
+    <p><b>Keywords:</b> Compiler, Computer Architecture, Memory Consistency Model, Microarchitecture, Programming Language</p>
+    <p><b>Abstract:</b> Designing a pipeline for a multicore processor is difficult. One major challenge is designing it such that the pipeline correctly enforces the intended memory consistency model (MCM). We have developed the PipeGen design automation tool to allow architects to start with a single core pipeline that only enforces single-threaded correctness and automatically transform it to enforce a given MCM. Our key innovation is a set of compiler-like transformations that codify three different ways of enforcing memory ordering at the pipeline. We have validated that PipeGen correctly enforces the ARMv8 and x86TSO MCMs on three distinct pipeline implementations, using litmus tests with the Murphi model checker.</p>
+    <p><b>DOI:</b> <a href='https://doi.org/10.1145/3656019.3676889' target='_blank'>https://doi.org/10.1145/3656019.3676889</a></p>
+  </details>
+</div>
+<hr>
+<div>
+  <input type='checkbox' id='cb_1' onclick='toggleDone(this, "details_1")'>
+  <label for='cb_1' class='summary-title'>vSPACE: Supporting Parallel Network Packet Processing in Virtualized Environments through Dynamic Core Management</label>
+  <details id='details_1'>
+    <p><b>Authors:</b> Park, Gyeongseo; Kim, Minho; Kang, Ki-Dong; Jeon, Yunhyeong; Kim, Sungju; Kim, Hyosang; Kim, Daehoon</p>
+    <p><b>Keywords:</b> </p>
+    <p><b>Abstract:</b> Data centers face significant performance challenges with parallel processing for network I/O in virtualized environments, particularly for latency-critical (LC) workloads that must satisfy strict Service Level Objectives (SLOs). While previous studies have addressed performance challenges in network I/O virtualization, they overlook the impact of excessive parallelism on the performance of Virtual Machines (VMs). We observe that excessive parallelization for VMs and network I/O processing can lead to core oversubscription, resulting in significant resource contention, frequent preemptions, and task migrations. Based on these observations, we propose vSPACE, dynamic core management specifically designed to support parallel network I/O processing in virtualized environments efficiently. To reduce scheduling contention, vSPACE creates distinct core allocation groups for VM and network I/O and assigns dedicated cores to each. Then, it dynamically adjusts the number of allocated cores to enforce appropriate parallelism for VMs and network I/O processing based on varying demands. vSPACE employs continuous monitoring and a heuristic algorithm to periodically determine appropriate core allocation, addressing excessive contention and improving energy and resource efficiency. vSPACE operates in three modes: performance improvement, energy efficiency, and resource efficiency. Our evaluations demonstrate that vSPACE significantly enhances throughput by up to 4.2 \texttimes{} compared to existing core allocation approaches and improves energy and resource efficiency by up to 16.5\% and 30.5\%, respectively.</p>
+    <p><b>DOI:</b> <a href='https://doi.org/10.1145/3656019.3689610' target='_blank'>https://doi.org/10.1145/3656019.3689610</a></p>
+  </details>
+</div>
+<hr>
+<div>
+  <input type='checkbox' id='cb_2' onclick='toggleDone(this, "details_2")'>
+  <label for='cb_2' class='summary-title'>MORSE: Memory Overwrite Time Guided Soft Writes to Improve ReRAM Energy and Endurance</label>
+  <details id='details_2'>
+    <p><b>Authors:</b> Singh, Devesh; Yeung, Donald</p>
+    <p><b>Keywords:</b> Emerging Non-Volatile Memory., Resistive RAM, Soft Writes, Write Energy and Endurance</p>
+    <p><b>Abstract:</b> ReRAM is an attractive main memory technology due to its high density and low idle power. However, ReRAM exhibits costly writes, especially in terms of energy and endurance. Prior device studies show that retention can be traded off for write energy and endurance by employing soft write operations with lower currents. But given their reduced retention times, soft writes require refresh operations to prevent data loss. Unfortunately, a large number of refreshes are needed in between writes to infrequently updated data. Hence, a non-volatile memory system with soft writes still needs traditional hard writes, and a way to choose between them. The efficacy of soft writes hinges on the time gap between consecutive writes to the same data, which we call the overwrite time. If the combined cost of a soft write and its refreshes within the overwrite time window is less than that of a hard write, the original soft write is profitable. Otherwise, it would have been better to perform a hard write to eliminate the refreshes. To address this, we propose MORSE, a predictor that learns the overwrite times between back-to-back writes to main memory, and associates them with static store instructions in a prediction table. As dynamic stores execute, MORSE predicts the optimal write type based on the predicted overwrite time’s magnitude. This soft write decision is placed in the cache hierarchy, and eventually informs the writeback to main memory to use either a soft or hard write. Our results show MORSE provides 2.5x - 4.1x improvement in endurance and 2.9x - 4.2x reduction in write energy over a state-of-the-art predictor. Moreover, we demonstrate that MORSE is within 19.8\% of the Oracle policy. Finally, we integrate MORSE with a prior wear leveling technique, called Ouroboros, and show that MORSE improves actual memory system lifetime by 6.2x over a baseline that only employs hard writes.</p>
+    <p><b>DOI:</b> <a href='https://doi.org/10.1145/3656019.3676890' target='_blank'>https://doi.org/10.1145/3656019.3676890</a></p>
+  </details>
+</div>
+<hr>
+<div>
+  <input type='checkbox' id='cb_3' onclick='toggleDone(this, "details_3")'>
+  <label for='cb_3' class='summary-title'>Optimizing Tensor Computation Graphs with Equality Saturation and Monte Carlo Tree Search</label>
+  <details id='details_3'>
+    <p><b>Authors:</b> Hartmann, Jakob; He, Guoliang; Yoneki, Eiko</p>
+    <p><b>Keywords:</b> Computation Graphs, Deep Learning, Equality Saturation, Monte Carlo Tree Search, Phase-Ordering Problem, Tensor Programs</p>
+    <p><b>Abstract:</b> The real-world effectiveness of deep neural networks often depends on their latency, thereby necessitating optimization techniques that can reduce a model’s inference time while preserving its performance. One popular approach is to sequentially rewrite the input computation graph into an equivalent but faster one by replacing individual subgraphs. This approach gives rise to the so-called phase-ordering problem in which the application of one rewrite rule can eliminate the possibility to apply an even better one later on. Recent work has shown that equality saturation, a technique from compiler optimization, can mitigate this issue by first building an intermediate representation (IR) that efficiently stores multiple optimized versions of the input program before extracting the best solution in a second step. In practice, however, memory constraints prevent the IR from capturing all optimized versions and thus reintroduce the phase-ordering problem in the construction phase. In this paper, we present a tensor graph rewriting approach that uses Monte Carlo tree search to build superior IRs by identifying the most promising rewrite rules. We also introduce a novel extraction algorithm that can provide fast and accurate runtime estimates of tensor programs represented in an IR. Our approach improves the inference speedup of neural networks by up to 11\% compared to existing methods.</p>
+    <p><b>DOI:</b> <a href='https://doi.org/10.1145/3656019.3689611' target='_blank'>https://doi.org/10.1145/3656019.3689611</a></p>
+  </details>
+</div>
+<hr>
+<div>
+  <input type='checkbox' id='cb_4' onclick='toggleDone(this, "details_4")'>
+  <label for='cb_4' class='summary-title'>Toast: A Heterogeneous Memory Management System</label>
+  <details id='details_4'>
+    <p><b>Authors:</b> Bailleu, Maurice; Stavrakakis, Dimitrios; Rocha, Rodrigo; Chakraborty, Soham; Garg, Deepak; Bhatotia, Pramod</p>
+    <p><b>Keywords:</b> Heterogeneous memory, Memory management, Memory protection, Memory safety, Performance, Portability, Programmability</p>
+    <p><b>Abstract:</b> Modern applications employ several heterogeneous memory types for improved performance, security, and reliability. To manage them, programmers must currently digress from the traditional load/store interface and rely on various custom libraries specific to each memory type, thus introducing programmability, performance, portability, and protection challenges. To overcome these challenges, we propose Toast, a compiler-based approach that offers a simplified programming model based on the established load/store interface along with programmable error-handling and memory consistency enforcement mechanisms and a protection library for memory safety. We implement Toast in the Clang/LLVM compiler framework accompanied by a runtime library, employing software storage capabilities and hardware-based protection mechanisms. Our evaluation based on four applications, which use heterogeneous memory types, shows that Toast improves the programmability, portability, and protection of applications, while offering performance on par with a hand-optimized version of the application.</p>
+    <p><b>DOI:</b> <a href='https://doi.org/10.1145/3656019.3676944' target='_blank'>https://doi.org/10.1145/3656019.3676944</a></p>
+  </details>
+</div>
+<hr>
+<div>
+  <input type='checkbox' id='cb_5' onclick='toggleDone(this, "details_5")'>
+  <label for='cb_5' class='summary-title'>A Transducers-based Programming Framework for Efficient Data Transformation</label>
+  <details id='details_5'>
+    <p><b>Authors:</b> Nguyen, Tri; Becchi, Michela</p>
+    <p><b>Keywords:</b> </p>
+    <p><b>Abstract:</b> Many data analytics and scientific applications rely on data transformation tasks, such as encoding, decoding, parsing of structured and unstructured data, and conversions between data formats and layouts. Previous work has shown that data transformation can represent a performance bottleneck for data analytics workloads. The transducers computational abstraction can be used to express a wide range of data transformations, and recent efforts have proposed configurable engines implementing various transducer models (from finite state transducers, to pushdown transducers, to extended models). This line of research, however, is still at an early stage. Notably, expressing data transformation using transducers requires a paradigm shift, impacting programmability. To address this problem, we propose a programming framework to map data transformation tasks onto a variety of transducer models. Our framework includes: (1) a platform agnostic programming language (xPTLang) to code transducer programs using intuitive programming constructs, and (2) a compiler that, given an xPTLang program, generates efficient transducer processing engines for CPU and GPU. Our compiler includes a set of optimizations to improve code efficiency. We demonstrate our framework on a diverse set of data transformation tasks on an Intel CPU and an Nvidia GPU.</p>
+    <p><b>DOI:</b> <a href='https://doi.org/10.1145/3656019.3676891' target='_blank'>https://doi.org/10.1145/3656019.3676891</a></p>
+  </details>
+</div>
+<hr>
+<div>
+  <input type='checkbox' id='cb_6' onclick='toggleDone(this, "details_6")'>
+  <label for='cb_6' class='summary-title'>Activation Sequence Caching: High-Throughput and Memory-Efficient Generative Inference with a Single GPU</label>
+  <details id='details_6'>
+    <p><b>Authors:</b> Kim, Sowoong; Sim, Eunyeong; Shin, Youngsam; Cho, YeonGon; Baek, Woongki</p>
+    <p><b>Keywords:</b> </p>
+    <p><b>Abstract:</b> Generative artificial intelligence is widely used for various tasks such as language translation and art creation. Generative inference employs the key and value tensors to encode relational information among the tokens in the input and output sequences. Most of the existing generative inference frameworks use KV caching (KVC), which caches the key and value tensors (i.e., the KV cache) to avoid recomputing the key and value tensors for each of the processed tokens. Despite the widespread use of KVC, in-depth characterization of KVC with tensor offloading, which enables generative inference with a single GPU, remains yet to be explored. To bridge this gap, this work presents an in-depth characterization study of KVC, which demonstrates that KVC makes a sub-optimal trade-off between computations and communications in the context of generative inference with tensor offloading. Guided by the characterization results, we propose a novel caching technique called activation sequence caching (ASC) for high-throughput and memory-efficient generative inference with a single GPU. ASC is designed to significantly reduce the memory usage and communication overheads of generative inference at the cost of the increased computational complexity. We provide an analytical analysis of the three caching techniques (i.e., zero caching, KVC, and ASC) for generative inference in terms of the memory usage, communication overheads, and computational complexity. Our quantitative evaluation demonstrates the effectiveness of ASC in that ASC significantly (e.g., 78.3\% higher throughput) outperforms a state-of-the-art generative inference framework (i.e., FlexGen) that implements KVC across various model sizes, input and output sequence lengths, and GPUs.</p>
+    <p><b>DOI:</b> <a href='https://doi.org/10.1145/3656019.3676945' target='_blank'>https://doi.org/10.1145/3656019.3676945</a></p>
+  </details>
+</div>
+<hr>
+<div>
+  <input type='checkbox' id='cb_7' onclick='toggleDone(this, "details_7")'>
+  <label for='cb_7' class='summary-title'>GraNNDis: Fast Distributed Graph Neural Network Training Framework for Multi-Server Clusters</label>
+  <details id='details_7'>
+    <p><b>Authors:</b> Song, Jaeyong; Jang, Hongsun; Lim, Hunseong; Jung, Jaewon; Kim, Youngsok; Lee, Jinho</p>
+    <p><b>Keywords:</b> Distributed Graph Neural Network Training, Distributed Systems, Graph Neural Network Training, Systems for Deep Learning</p>
+    <p><b>Abstract:</b> Graph neural networks (GNNs) are one of the rapidly growing fields within deep learning. While many distributed GNN training frameworks have been proposed to increase the training throughput, they face three limitations when applied to multi-server clusters. 1) They suffer from an inter-server communication bottleneck because they do not consider the inter-/intra-server bandwidth gap, a representative characteristic of multi-server clusters. 2) Redundant memory usage and computation hinder the scalability of the distributed frameworks. 3) Sampling methods, de facto standard in mini-batch training, incur unnecessary errors in multi-server clusters. We found that these limitations can be addressed by exploiting the characteristics of multi-server clusters. Here, we propose GraNNDis, a fast distributed GNN training framework for multi-server clusters. Firstly, we present Flexible Preloading, which preloads the essential vertex dependencies server-wise to reduce the low-bandwidth inter-server communications. Secondly, we introduce Cooperative Batching, which enables memory-efficient, less redundant mini-batch training by utilizing high-bandwidth intra-server communications. Thirdly, we propose Expansion-aware Sampling, a cluster-aware sampling method, which samples the edges that affect the system speedup. As sampling the intra-server dependencies does not contribute much to the speedup as they are communicated through fast intra-server links, it only targets a server boundary to be sampled. Lastly, we introduce One-Hop Graph Masking, a computation and communication structure to realize the above methods in multi-server environments. We evaluated GraNNDis on multi-server clusters, and it provided significant speedup over the state-of-the-art distributed GNN training frameworks. GraNNDis is open-sourced at https://github.com/AIS-SNU/GraNNDis_Artifact to facilitate its use.</p>
+    <p><b>DOI:</b> <a href='https://doi.org/10.1145/3656019.3676892' target='_blank'>https://doi.org/10.1145/3656019.3676892</a></p>
+  </details>
+</div>
+<hr>
+<div>
+  <input type='checkbox' id='cb_8' onclick='toggleDone(this, "details_8")'>
+  <label for='cb_8' class='summary-title'>Trimma: Trimming Metadata Storage and Latency for Hybrid Memory Systems</label>
+  <details id='details_8'>
+    <p><b>Authors:</b> Li, Yiwei; Tian, Boyu; Gao, Mingyu</p>
+    <p><b>Keywords:</b> DRAM cache, high-bandwidth memory, hybrid memory, metadata</p>
+    <p><b>Abstract:</b> Hybrid main memory systems combine both performance and capacity advantages from heterogeneous memory technologies. With larger capacities, higher associativities, and finer granularities, hybrid memory systems currently exhibit significant metadata storage and lookup overheads for flexibly remapping data blocks between the two memory tiers. To alleviate the inefficiencies of existing designs, we propose Trimma, the combination of a multi-level metadata structure and an efficient metadata cache design. Trimma uses a multi-level metadata table to only track truly necessary address remap entries. The saved memory space is effectively utilized as extra DRAM cache capacity to improve performance. Trimma also uses separate formats to store the entries with non-identity and identity address mappings. This improves the overall remap cache hit rate, further boosting the performance. Trimma is transparent to software and compatible with various types of hybrid memory systems. When evaluated on a representative hybrid memory system with HBM3 and DDR5, Trimma achieves up to 1.68 \texttimes{} and on average 1.33 \texttimes{} speedup benefits, compared to state-of-the-art hybrid memory designs. These results show that Trimma effectively addresses metadata management overheads, especially for future scalable large-scale hybrid memory architectures.</p>
+    <p><b>DOI:</b> <a href='https://doi.org/10.1145/3656019.3689612' target='_blank'>https://doi.org/10.1145/3656019.3689612</a></p>
+  </details>
+</div>
+<hr>
+<div>
+  <input type='checkbox' id='cb_9' onclick='toggleDone(this, "details_9")'>
+  <label for='cb_9' class='summary-title'>BoostCom: Towards Efficient Universal Fully Homomorphic Encryption by Boosting the Word-wise Comparisons</label>
+  <details id='details_9'>
+    <p><b>Authors:</b> Yudha, Ardhi Wiratama Baskara; Xue, Jiaqi; Lou, Qian; Zhou, Huiyang; Solihin, Yan</p>
+    <p><b>Keywords:</b> Confidential Computing, Fully Homomorphic Encryption, GPU, Security</p>
+    <p><b>Abstract:</b> Fully Homomorphic Encryption (FHE) allows for the execution of computations on encrypted data without the need to decrypt it first, offering significant potential for privacy-preserving computational operations. Emerging arithmetic-based FHE schemes (ar-FHE), like BGV, demonstrate even better performance in word-wise comparison operations over non-arithmetic FHE (na-FHE) schemes, such as TFHE, especially for basic tasks like comparing values, finding maximums, and minimums. This shows the universality of ar-FHE in effectively handling both arithmetic and non-arithmetic operations without the expensive conversion between arithmetic and non-arithmetic FHEs. We refer to universal arithmetic Fully Homomorphic Encryption as uFHE. The arithmetic operations in uFHE remain consistent with those in the original arithmetic FHE, which have seen significant acceleration. However, its non-arithmetic comparison operations differ, are slow, and have not been as thoroughly studied or accelerated. In this paper, we introduce BoostCom, a scheme designed to speed up word-wise comparison operations, enhancing the efficiency of uFHE systems. BoostCom involves a multi-prong optimizations including infrastructure acceleration (Multi-level heterogeneous parallelization and GPU-related improvements), and algorithm-aware optimizations (slot compaction, non-blocking comparison semantic). Together, BoostCom achieves an end-to-end performance improvement of more than an order of magnitude (11.1 \texttimes{} faster) compared to the state-of-the-art CPU-based uFHE systems, across various FHE parameters and tasks.</p>
+    <p><b>DOI:</b> <a href='https://doi.org/10.1145/3656019.3676893' target='_blank'>https://doi.org/10.1145/3656019.3676893</a></p>
+  </details>
+</div>
+<hr>
+<div>
+  <input type='checkbox' id='cb_10' onclick='toggleDone(this, "details_10")'>
+  <label for='cb_10' class='summary-title'>Leveraging Difference Recurrence Relations for High-Performance GPU Genome Alignment</label>
+  <details id='details_10'>
+    <p><b>Authors:</b> Zeni, Alberto; Onken, Seth; Santambrogio, Marco Domenico; Samadi, Mehrzad</p>
+    <p><b>Keywords:</b> DPX, GPU, Genome Alignment, Genomics, KSW2, SIMD, minimap2</p>
+    <p><b>Abstract:</b> Genome pairwise sequence alignment is one of the most computationally intensive workloads in many genomic pipelines, often accounting for over 90\% of the runtime of critical bioinformatics applications. Recent advancements in sequencing technologies keep increasing the throughput of genomic sequencing data while decreasing the associated cost, emphasizing the need for fast and accurate software to perform sequence analysis, given the quadratic complexity of exact pairwise algorithms. In this challenging scenario, we present the first fully GPU-accelerated version of the KSW2 genome alignment library. Results show that our high-performance implementation achieves up to 1145.17 Giga Cell Updates Per Second (GCUPS) and speedups up to 72.83 \texttimes{} on a single NVIDIA Tesla H100 over the state-of-the-art baseline software running on two Intel Xeon Platinum 8358 processors with a total of 128 CPU threads, while preserving alignment accuracy. Using the same configuration, we demonstrate a 66.00 \texttimes{} speedup, versus ksw2d-fast, a state-of-the-art improved version of one of the KSW2 algorithms. Furthermore, we compare our implementation against a recently proposed FPGA implementation of ksw2z, achieving speedups up to 156.37 \texttimes{} using a single H100 GPU. To further highlight the impact of our work, we integrate our accelerated kernels within one of the most used aligners and mappers in the State Of the Art, called minimap2, demonstrating runtime improvements by up to 8.51 \texttimes{} and 8.03 \texttimes{} using a single H100 GPU against the baseline software and mm2-fast, an optimized version of minimap2 which integrates ksw2d-fast as its core aligner. Our design accelerates all the algorithms of the state-of-the-art KSW2 aligner suite (splice, double- and single- gap affine) and supports the Z-drop heuristic and banded alignment as the original software to reduce the processing time further if needed. Finally, we evaluate our application on the H100 GPU, adapting the Berkeley Roofline model for KSW2 and demonstrating that our implementation is near optimal on our target GPU architecture.</p>
+    <p><b>DOI:</b> <a href='https://doi.org/10.1145/3656019.3676894' target='_blank'>https://doi.org/10.1145/3656019.3676894</a></p>
+  </details>
+</div>
+<hr>
+<div>
+  <input type='checkbox' id='cb_11' onclick='toggleDone(this, "details_11")'>
+  <label for='cb_11' class='summary-title'>Chimera: Leveraging Hybrid Offsets for Efficient Data Prefetching</label>
+  <details id='details_11'>
+    <p><b>Authors:</b> He, Shuiyi; Wang, Zicong; Tang, Xuan; Sun, Qiyao; Dong, Dezun</p>
+    <p><b>Keywords:</b> Data prefetching, First-level cache, Hardware prefetching, Microarchitecture</p>
+    <p><b>Abstract:</b> Data prefetching is an essential technique in contemporary high-performance processors for mitigating the effects of long-latency memory accesses. With the increasing demand for prefetcher to learn complex memory access patterns, many state-of-the-art prefetchers adopt methods such as using the program counter or access delta to separate memory access streams. This allows them to learn detailed memory access features and thereby improve memory system performance. However, the separation-based approach is prone to missing global correlations, leading to miss prefetching opportunities. In this paper, we propose Chimera, a hybrid offsets prefetcher that captures multiple offset features from the overall stream of memory access instructions, thus overcoming the drawbacks of traditional prefetchers that tend to lose memory access information when learning from one-sided features. We evaluated Chimera using SPEC CPU 2006 and 2017 through simulation, and the results show that Chimera improves system performance by 39.5\% over a baseline with no data prefetcher and by 6.6\% over the state-of-the-art data prefetcher.</p>
+    <p><b>DOI:</b> <a href='https://doi.org/10.1145/3656019.3689613' target='_blank'>https://doi.org/10.1145/3656019.3689613</a></p>
+  </details>
+</div>
+<hr>
+<div>
+  <input type='checkbox' id='cb_12' onclick='toggleDone(this, "details_12")'>
+  <label for='cb_12' class='summary-title'>MIREncoder: Multi-modal IR-based Pretrained Embeddings for Performance Optimizations</label>
+  <details id='details_12'>
+    <p><b>Authors:</b> Dutta, Akash; Jannesari, Ali</p>
+    <p><b>Keywords:</b> Auto-tuning, GNN, LLVM, Multi-modal Modeling, Performance Optimization, Pre-training</p>
+    <p><b>Abstract:</b> One of the primary areas of interest in High Performance Computing is the improvement of performance of parallel workloads. Nowadays, compilable source code-based optimization tasks that employ deep learning often exploit LLVM Intermediate Representations (IRs) for extracting features from source code. Most such works target specific tasks, or are designed with a pre-defined set of heuristics. So far, pre-trained models are rare in this domain, but the possibilities have been widely discussed. Especially approaches mimicking large-language models (LLMs) have been proposed. But these have prohibitively large training costs. In this paper, we propose MIREncoder, a Multi-modal IR-based Auto-Encoder that can be pre-trained to generate a learned embedding space to be used for downstream tasks by machine learning-based approaches. A multi-modal approach enables us to better extract features from compilable programs. It allows us to better model code syntax, semantics and structure. For code-based performance optimizations, these features are very important while making optimization decisions. A pre-trained model/embedding implicitly enables the usage of transfer learning, and helps move away from task-specific trained models. Additionally, a pre-trained model used for downstream performance optimization should itself have reduced overhead, and be easily usable. These considerations have led us to propose a modeling approach that i) understands code semantics and structure, ii) enables use of transfer learning, and iii) is small and simple enough to be easily re-purposed or reused even with low resource availability. Our evaluations will show that our proposed approach can outperform the state of the art while reducing overhead.</p>
+    <p><b>DOI:</b> <a href='https://doi.org/10.1145/3656019.3676895' target='_blank'>https://doi.org/10.1145/3656019.3676895</a></p>
+  </details>
+</div>
+<hr>
+<div>
+  <input type='checkbox' id='cb_13' onclick='toggleDone(this, "details_13")'>
+  <label for='cb_13' class='summary-title'>NavCim: Comprehensive Design Space Exploration for Analog Computing-in-Memory Architectures</label>
+  <details id='details_13'>
+    <p><b>Authors:</b> Park, Juseong; Kim, Boseok; Sung, Hyojin</p>
+    <p><b>Keywords:</b> </p>
+    <p><b>Abstract:</b> Analog computing-in-memory (ACiM) technology has shown strong potential for neural network accelerators, addressing von-Neumann performance bottlenecks with in-memory data processing and computation. Understanding the ACiM design space, including its trade-offs and constraints, and systematically and effectively exploring it for optimal performance is essential to turn the promise into a viable product. Recent research demonstrated that multi-objective searches for ACiM architectures with heterogeneous tiles can simultaneously optimize power, performance, and area (PPA), outperforming existing tiled ACiM proposals. In this paper, we propose NavCim, a comprehensive ACiM design space exploration mechanism that advances the prior work in terms of search efficiency, search space coverage, and optimization metrics. NavCim introduces predictive modeling of ACiM hardware performance and uses the PPA prediction models instead of running simulators, significantly reducing search overheads. Faster searches enable NavCim to extend the architecture and model search spaces with an evolutionary search process to optimize architectures with more than two different tile sizes for multiple input models. With accuracy-aware searches, NavCim considers PPA and model accuracy together as optimization goals to achieve more balanced trade-offs. The experimental searches show that NavCim leverages predictive models to reduce search time by up to 7.3x without compromising the quality of search results. It also successfully identifies heterogeneous ACiM architectures that can efficiently execute multiple models on a single chip, improving accuracy by up to 19\% over the prior work.</p>
+    <p><b>DOI:</b> <a href='https://doi.org/10.1145/3656019.3676946' target='_blank'>https://doi.org/10.1145/3656019.3676946</a></p>
+  </details>
+</div>
+<hr>
+<div>
+  <input type='checkbox' id='cb_14' onclick='toggleDone(this, "details_14")'>
+  <label for='cb_14' class='summary-title'>Mozart: Taming Taxes and Composing Accelerators with Shared-Memory</label>
+  <details id='details_14'>
+    <p><b>Authors:</b> Suresh, Vignesh; Mishra, Bakshree; Jing, Ying; Zhu, Zeran; Jin, Naiyin; Block, Charles; Mantovani, Paolo; Giri, Davide; Zuckerman, Joseph; Carloni, Luca P.; Adve, Sarita V.</p>
+    <p><b>Keywords:</b> Accelerator Synchronization, Cache Coherence, Disaggregated Acceleration, Heterogeneous Systems, Shared-Memory</p>
+    <p><b>Abstract:</b> Resource-constrained system-on-chips (SoCs) are increasingly heterogeneous with specialized accelerators for various tasks. Acceleration taxes due to control and data movement, however, diminish end-to-end speedups from hardware acceleration. Meanwhile, emerging workloads are increasingly task-diverse with several, potentially shared, fine-grained acceleration candidates. This motivates a paradigm of parallel and disaggregated acceleration. Compared to a monolithic accelerator, disaggregation provides higher flexibility, reuse, and utilization, but at the cost of higher control and data acceleration taxes. We propose a novel SoC architecture, Mozart, that enables efficient accelerator disaggregation by leveraging shared-memory to tame control and data acceleration taxes. To address the control tax, Mozart includes a lightweight, modular, and general accelerator synchronization interface (ASI). ASI eliminates the typical CPU-centric accelerator control in favor of a decentralized, uniform synchronization interface through shared-memory. This enables accelerators to directly and transparently synchronize with each other (or CPUs) using the same shared-memory interface as CPUs. To address the data tax, Mozart leverages the Spandex-FCS heterogeneous coherence protocol, which supports decentralized data movement and per-word coherence specialization. We demonstrate the first RTL implementation of Spandex-FCS and the first evaluation of its benefits for a heterogeneous SoC with fixed-function accelerators, running real-world applications with Linux. Mozart simultaneously enables, for the first time, (1)&nbsp;finer-grained acceleration than previously possible, (2)&nbsp;programmable and transparent composition of fine-grained, disaggregated accelerators, (3)&nbsp;efficient accelerator pipelining through shared-memory and decentralization, and (4)&nbsp;a performance-competitive disaggregated alternative to specialized monolithic accelerators. We demonstrate these capabilities of Mozart with a comprehensive one-of-a-kind evaluation of more than 70 hardware configurations prototyped on an FPGA employing various accelerators, running real-world applications on Linux, and a scalability analysis with up to 15 accelerators. We also present an analytical performance model to understand and explore system design choices and to validate the results.</p>
+    <p><b>DOI:</b> <a href='https://doi.org/10.1145/3656019.3676896' target='_blank'>https://doi.org/10.1145/3656019.3676896</a></p>
+  </details>
+</div>
+<hr>
+<div>
+  <input type='checkbox' id='cb_15' onclick='toggleDone(this, "details_15")'>
+  <label for='cb_15' class='summary-title'>PIM-Opt: Demystifying Distributed Optimization Algorithms on a Real-World Processing-In-Memory System</label>
+  <details id='details_15'>
+    <p><b>Authors:</b> Rhyner, Steve; Luo, Haocong; G\'{o}mez-Luna, Juan; Sadrosadati, Mohammad; Jiang, Jiawei; Olgun, Ataberk; Gupta, Harshita; Zhang, Ce; Mutlu, Onur</p>
+    <p><b>Keywords:</b> Distributed Optimization Algorithms, ML, ML training, Optimization, Processing-In-Memory, Scalability, Stochastic Gradient Descent</p>
+    <p><b>Abstract:</b> Modern Machine Learning (ML) training on large-scale datasets is a very time-consuming workload. It relies on the optimization algorithm Stochastic Gradient Descent (SGD) due to its effectiveness, simplicity, and generalization performance (i.e., test performance on unseen data). Processor-centric architectures (e.g., CPUs, GPUs) commonly used for modern ML training workloads based on SGD are bottlenecked by data movement between the processor and memory units due to the poor data locality in accessing large training datasets. As a result, processor-centric architectures suffer from low performance and high energy consumption while executing ML training workloads. Processing-In-Memory (PIM) is a promising solution to alleviate the data movement bottleneck by placing the computation mechanisms inside or near memory. Several prior works propose PIM techniques to accelerate ML training; however, prior works either do not consider real-world PIM systems or evaluate algorithms that are not widely used in modern ML training. Our goal is to understand the capabilities and characteristics of popular distributed SGD algorithms on real-world PIM systems to accelerate data-intensive ML training workloads. To this end, we 1) implement several representative centralized parallel SGD algorithms, i.e., based on a central node responsible for synchronization and orchestration, on the real-world general-purpose UPMEM PIM system, 2) rigorously evaluate these algorithms for ML training on large-scale datasets in terms of performance, accuracy, and scalability, 3) compare to conventional CPU and GPU baselines, and 4) discuss implications for future PIM hardware. We highlight the need for a shift to an algorithm-hardware codesign to enable decentralized parallel SGD algorithms in real-world PIM systems, which significantly reduces the communication cost and improves scalability. Our results demonstrate three major findings: 1) The general-purpose UPMEM PIM system can be a viable alternative to state-of-the-art CPUs and GPUs for many memory-bound ML training workloads, especially when operations and datatypes are natively supported by PIM hardware, 2) it is important to carefully choose the optimization algorithms that best fit PIM, and 3) the UPMEM PIM system does not scale approximately linearly with the number of nodes for many data-intensive ML training workloads. We open source all our code to facilitate future research at https://github.com/CMU-SAFARI/PIM-Opt.</p>
+    <p><b>DOI:</b> <a href='https://doi.org/10.1145/3656019.3676947' target='_blank'>https://doi.org/10.1145/3656019.3676947</a></p>
+  </details>
+</div>
+<hr>
+<div>
+  <input type='checkbox' id='cb_16' onclick='toggleDone(this, "details_16")'>
+  <label for='cb_16' class='summary-title'>Parallel Loop Locality Analysis for Symbolic Thread Counts</label>
+  <details id='details_16'>
+    <p><b>Authors:</b> Liu, Fangzhou; Zhu, Yifan; Sun, Shaotong; Ding, Chen; Smith, Wesley; Hosseini, Kaave Seyed</p>
+    <p><b>Keywords:</b> Analytical model, Concurrent reuse interval, Data sharing, Locality, Multi-threaded applications, Static analysis</p>
+    <p><b>Abstract:</b> Data movement limits program performance. This bottleneck is more significant in multi-thread programs but more difficult to analyze, especially for multiple thread counts. For regular loop nests parallelized by OpenMP, this paper presents a new technique that predicts their miss ratio in the shared cache. It uses two statistical models, one for cache sharing and one for data sharing. Both models use a symbolic number of threads, making it trivial to compute the miss ratio of any additional thread count after initial analysis. The technique is implemented in a tool called PLUSS. When tested on 73 parallel loops used in scientific kernels, image processing and machine learning, PLUSS produces accurate results compared to profiling and reduces the analysis cost by up to two orders of magnitude.</p>
+    <p><b>DOI:</b> <a href='https://doi.org/10.1145/3656019.3676948' target='_blank'>https://doi.org/10.1145/3656019.3676948</a></p>
+  </details>
+</div>
+<hr>
+<div>
+  <input type='checkbox' id='cb_17' onclick='toggleDone(this, "details_17")'>
+  <label for='cb_17' class='summary-title'>Improving Throughput-oriented LLM Inference with CPU Computations</label>
+  <details id='details_17'>
+    <p><b>Authors:</b> Park, Daon; Egger, Bernhard</p>
+    <p><b>Keywords:</b> CPU offloading, large language model generation, throughput-latency tradeoff</p>
+    <p><b>Abstract:</b> Large language models (LLMs) have recently captured the attention of a broad audience. To a large part, their exceptional performance in text generation was made possible by an exponential growth of the model parameters. This growth, however, comes at the expense of significantly higher operational costs and a decreased processing speed. Recent research has focused on running LLMs on commodity hardware, for example, by employing the memory hierarchy to augment throughput by increasing the number of batches. These studies, however, tend to overlook or inefficiently utilize the additional computational resources provided by the CPU. In this paper, we introduce a technique capable of efficiently harnessing all available computational resources through a finely tuned and dynamic workload allocation approach. This technique applies to decoder-based models on standard general-purpose hardware, effectively minimizing idle periods for both the CPU and the GPU. We conducted experiments involving various large language models, each representing distinct decoder-based architectures. Compared to the state-of-the-art, the results demonstrate a potential for an increase of up to 105\% in throughput with the OPT-30B model.</p>
+    <p><b>DOI:</b> <a href='https://doi.org/10.1145/3656019.3676949' target='_blank'>https://doi.org/10.1145/3656019.3676949</a></p>
+  </details>
+</div>
+<hr>
+<div>
+  <input type='checkbox' id='cb_18' onclick='toggleDone(this, "details_18")'>
+  <label for='cb_18' class='summary-title'>ZeD: A Generalized Accelerator for Variably Sparse Matrix Computations in ML</label>
+  <details id='details_18'>
+    <p><b>Authors:</b> Dangi, Pranav; Bai, Zhenyu; Juneja, Rohan; Wijerathne, Dhananjaya; Mitra, Tulika</p>
+    <p><b>Keywords:</b> Hardware Acceleration, Machine Learning Hardware, Sparse Compression Formats, Sparse Tensor Computations</p>
+    <p><b>Abstract:</b> Modern Machine Learning (ML) models employ sparsity to mitigate storage and computation costs; but it gives rise to irregular and unstructured sparse matrix operations that dominate the execution time and require specialized accelerators to meet the performance and energy targets. Contemporary sparse matrix accelerators, optimized for extreme sparsity, frequently fall short in addressing the variable and moderate degrees of sparsity prevalent in most ML models. Variable sparsity leads to inefficiency in the storage and processing of matrices. In response to this challenge, we propose an adaptive and generalized architecture design, ZeD, capable of accommodating the variably sparse matrix computations in ML models. Our innovative design integrates a bit-tree compression format and zero-detection hardware, resulting in highly efficient packing, storage, retrieval, and processing of sparse matrices. Furthermore, we propose a matrix row reorganization strategy based on sparsity similarity to substantially enhance memory reuse. Synthesis results of ZeD demonstrate a 3.2 \texttimes{} improvement in performance per area over state-of-the-art solutions across a spectrum of ML workloads characterized by wide-ranging sparsities.</p>
+    <p><b>DOI:</b> <a href='https://doi.org/10.1145/3656019.3689905' target='_blank'>https://doi.org/10.1145/3656019.3689905</a></p>
+  </details>
+</div>
+<hr>
+<div>
+  <input type='checkbox' id='cb_19' onclick='toggleDone(this, "details_19")'>
+  <label for='cb_19' class='summary-title'>ACE: Efficient GPU Kernel Concurrency for Input-Dependent Irregular Computational Graphs</label>
+  <details id='details_19'>
+    <p><b>Authors:</b> Durvasula, Sankeerth; Zhao, Adrian; Kiguru, Raymond; Guan, Yushi; Chen, Zhonghan; Vijaykumar, Nandita</p>
+    <p><b>Keywords:</b> GPU Architecture, Workload performance Analysis</p>
+    <p><b>Abstract:</b> GPUs are widely used to accelerate many important classes of workloads today. However, in this work, we observe that several important emerging classes of workloads, including simulation engines for deep reinforcement learning and dynamic neural networks, are unable to fully utilize the massive parallelism that GPUs offer. These applications tend to have kernels that are small in size, i.e., have few threads and thread blocks that cannot saturate the GPU’s compute resources. Executing independent kernels concurrently is a promising approach to improve parallelism and utilization. However, this inter-kernel concurrency is difficult to leverage in such workloads with existing approaches: First, the inter-kernel dependencies and computational graph are input-dependent and vary each time the application is executed. Second, the computational graphs tend to be irregular, requiring fine-grain scheduling and synchronization; thus incurring significant synchronization overheads if kernel execution is parallelized. In this work, we propose ACE, a new framework that enables lightweight detection of inter-kernel dependencies and low overhead kernel scheduling at runtime. The key idea behind ACE is to perform inter-kernel dependency checks for a small window of kernels at runtime, similar to out-of-order instruction scheduling. This enables concurrent execution of kernels in applications whose computational graphs are input-dependent and require fine-grained scheduling. We propose ACE-SW, a software-only open-source implementation of ACE and ACE-HW, a hardware-software cooperative implementation. ACE-HW further reduces synchronization overheads by reducing communication between the CPU and GPU. We evaluate ACE for deep RL simulation engines and dynamic and static DNNs on both real hardware and a GPU simulator. We demonstrate speedups of up to 2.19 \texttimes{} (1.56 \texttimes{} on average) by improving GPU utilization with concurrent kernel execution.</p>
+    <p><b>DOI:</b> <a href='https://doi.org/10.1145/3656019.3676897' target='_blank'>https://doi.org/10.1145/3656019.3676897</a></p>
+  </details>
+</div>
+<hr>
+<div>
+  <input type='checkbox' id='cb_20' onclick='toggleDone(this, "details_20")'>
+  <label for='cb_20' class='summary-title'>SZKP: A Scalable Accelerator Architecture for Zero-Knowledge Proofs</label>
+  <details id='details_20'>
+    <p><b>Authors:</b> Daftardar, Alhad; Reagen, Brandon; Garg, Siddharth</p>
+    <p><b>Keywords:</b> Cryptography, Hardware Acceleration, Zero-Knowledge Proofs</p>
+    <p><b>Abstract:</b> Zero-Knowledge Proofs (ZKPs) are an emergent paradigm in verifiable computing. In the context of applications like cloud computing, ZKPs can be used by a client (called the verifier) to verify the service provider (called the prover) is in fact performing the correct computation based on a public input. A recently prominent variant of ZKPs is zkSNARKs, generating succinct proofs that can be rapidly verified by the end user. However, proof generation itself is very time consuming per transaction. Two key primitives in proof generation are the Number Theoretic Transform (NTT) and Multi-scalar Multiplication (MSM). These primitives are prime candidates for hardware acceleration, and prior works have looked at GPU implementations and custom RTL. However, both algorithms involve complex dataflow patterns – standard NTTs have irregular memory accesses for butterfly computations from stage to stage, and MSMs using Pippenger’s algorithm have data-dependent memory accesses for partial sum calculations. We present SZKP, a scalable accelerator framework that is the first ASIC to accelerate an entire proof on-chip by leveraging structured dataflows for both NTTs and MSMs. SZKP achieves conservative full-proof speedups of over 400 \texttimes{}, 3 \texttimes{}, and 12 \texttimes{} over CPU, ASIC, and GPU implementations.</p>
+    <p><b>DOI:</b> <a href='https://doi.org/10.1145/3656019.3676898' target='_blank'>https://doi.org/10.1145/3656019.3676898</a></p>
+  </details>
+</div>
+<hr>
+<div>
+  <input type='checkbox' id='cb_21' onclick='toggleDone(this, "details_21")'>
+  <label for='cb_21' class='summary-title'>BOOM: Use your Desktop to Accurately Predict the Performance of Large Deep Neural Networks</label>
+  <details id='details_21'>
+    <p><b>Authors:</b> Su, Qidong; Yang, Jiacheng; Pekhimenko, Gennady</p>
+    <p><b>Keywords:</b> deep neural networks, machine learning, performance profiling</p>
+    <p><b>Abstract:</b> The intensive computational requirements of training deep neural networks (DNNs) have significantly driven the adoption of DNN accelerators like Graph Processing Units (GPU). However, selecting the most suitable GPU from all candidates with drastically different specifications and prices is still a challenging problem. While directly measuring the performance of DNN training tasks on every candidate is prohibitive, and not always available due to hardware shortage, an accurate performance predictor can assist in the decision-making. However, most existing performance predictors cannot predict the GPU memory footprint in an accurate, generalizable, and interpretable manner, which is crucial to the feasibility and performance of running the DNN model on real GPUs. Moreover, many optimizations for DNN training, such as mixed precision training and checkpointing, can significantly impact performance. However, such hardware-dependent optimizations are not considered by existing performance predictors. In this work, we propose a novel performance predictor containing (1) a memory footprint predictor with better generalizability and interoperability; (2) a runtime predictor supporting hardware-dependent optimizations. Experiments show that our memory footprint predictor achieves an average error of 2.7\% on CNN models and 0.9\% on transformers, and the runtime predictor achieves an average error of 10.5\% on the CNN and transformer models.</p>
+    <p><b>DOI:</b> <a href='https://doi.org/10.1145/3656019.3676950' target='_blank'>https://doi.org/10.1145/3656019.3676950</a></p>
+  </details>
+</div>
+<hr>
+<div>
+  <input type='checkbox' id='cb_22' onclick='toggleDone(this, "details_22")'>
+  <label for='cb_22' class='summary-title'>A Parallel Hash Table for Streaming Applications</label>
+  <details id='details_22'>
+    <p><b>Authors:</b> \"{O}stgren, Magnus; Sourdis, Ioannis</p>
+    <p><b>Keywords:</b> FPGA, hash table, high throughput, stream aggregation</p>
+    <p><b>Abstract:</b> Hash Tables are important data structures for a wide range of data intensive applications in various domains. They offer compact storage for sparse data, but their performance has difficulties to scale with the rapidly increasing volumes of data as they typically offer a single access port. Building a hash table with multiple parallel ports either has an excessive cost in memory resources, i.e., requiring redundant copies of its contents, and/or exhibits a worst case performance of just a single port memory due to bank conflicts. This work introduces a new multi-port hash table design, called Multi&nbsp;Hash&nbsp;Table, which does not require content replication to offer conflict free parallelism. Multi&nbsp;Hash&nbsp;Table avoids conflicts among its parallel banks by (i) supporting different dynamic mappings of its hash table address to index to the banks, and by (ii) caching (and aggregating) accesses to frequently used entries. The Multi&nbsp;Hash&nbsp;Table is used for reconfigurable single sliding window stream aggregation, increasing processing throughput by 7.5 \texttimes{}.</p>
+    <p><b>DOI:</b> <a href='https://doi.org/10.1145/3656019.3676951' target='_blank'>https://doi.org/10.1145/3656019.3676951</a></p>
+  </details>
+</div>
+<hr>
+<div>
+  <input type='checkbox' id='cb_23' onclick='toggleDone(this, "details_23")'>
+  <label for='cb_23' class='summary-title'>Recompiling QAOA Circuits on Various Rotational Directions</label>
+  <details id='details_23'>
+    <p><b>Authors:</b> Jang, Enhyeok; Ha, Dongho; Choi, Seungwoo; Kim, Youngmin; Kwon, Jaewon; Lee, Yongju; Ahn, Sungwoo; Kim, Hyungseok; Ro, Won Woo</p>
+    <p><b>Keywords:</b> Algorithm-Hardware Co-Design, Native Gate, Quantum Compiler</p>
+    <p><b>Abstract:</b> The quantum approximate optimization algorithm (QAOA) is introduced to efficiently solve combinatorial optimization problems. Despite the promise of QAOA, the cost of executing QAOA circuits at scale for quantum advantage may still be excessive for the near-future quantum device. We observe the increasing overhead of QAOA circuit execution in the native gate translation. To execute QAOA circuits on a real quantum computing device, Hamiltonians composed of predefined specific rotations (e.g., ZZ and X) should be decomposed into finite native gates. By adopting rotational combinations that utilize native gates more directly than the standard QAOA circuit model, the execution cost on real quantum devices can be reduced. In this study, we propose Racoon (Rotational Space Virtualization for QAOA Ansatz), an algorithm-hardware co-design approach that revisits the synthesis conditions of QAOA circuits and selects alternative candidates with different rotational combinations. Our analysis of six commercial quantum processors demonstrates that applying Racoon to QAOA circuits for the 4-node Sherrington-Kirkpatrick model reduces the number of native gates by an average of 23\% and up to 79\%. Consequently, using Racoon results in 43\% fewer training epochs, 41\% lower training energy consumption, and a 6\% improvement in inference on average compared to standard QAOA. Racoon consistently reduces circuit depth as the number of qubits and layers increases, achieving 123 \texttimes{} more circuit depth reduction compared to the recently proposed Depth First Search (DFS)-based method. Furthermore, we confirm that Racoon’s method can be extended to State-of-The-Art QAOAs with modified ans\"{a}tze and to the variational quantum eigensolver (VQE).</p>
+    <p><b>DOI:</b> <a href='https://doi.org/10.1145/3656019.3676899' target='_blank'>https://doi.org/10.1145/3656019.3676899</a></p>
+  </details>
+</div>
+<hr>
+<div>
+  <input type='checkbox' id='cb_24' onclick='toggleDone(this, "details_24")'>
+  <label for='cb_24' class='summary-title'>Rethinking Page Table Structure for Fast Address Translation in GPUs: A Fixed-Size Hashed Page Table</label>
+  <details id='details_24'>
+    <p><b>Authors:</b> Jang, Sungbin; Park, Junhyeok; Kwon, Osang; Lee, Yongho; Hong, Seokin</p>
+    <p><b>Keywords:</b> GPGPU, Page Tables, Virtual Memory</p>
+    <p><b>Abstract:</b> GPU memory virtualization has become essential for efficient programming, memory management, and address space sharing among computing devices in heterogeneous systems. Conventional GPU virtual memory systems use multi-level Radix Page Tables (RPTs) to store virtual-to-physical address mapping in device (GPU) memory. When a TLB miss occurs, a page table walker accesses each level of the page table sequentially to find the desired mapping. These sequential accesses significantly degrade performance, adding pressure to the GPU memory hierarchy. To make matters worse, recent computing systems now support five-level RPTs, further increasing the number of memory accesses required per page table walk. To tackle this problem, we propose a novel framework called Fixed-Size HPT (FS-HPT), which employs Hashed Page Tables (HPTs) instead of traditional RPTs. Our framework is motivated by two key observations. First, a GPU’s local page table is primarily responsible for storing the Page Table Entries (PTEs) of pages currently in GPU memory. Second, most remote mappings are only live for a short time and account for a small portion of the page table during program execution. Motivated by these observations, FS-HPT uses a large fixed-size hash table as the GPU’s local page table. In the proposed framework, the page table size does not grow. Thus, our approach fundamentally avoids page table resizing, a critical limitation of HPTs. Instead, FS-HPT strategically evicts rarely-used PTEs from the page table to reduce hash collisions. FS-HPT employs a step table to provide fast table lookups and a victim buffer to minimize the impact of PTE eviction on performance. These additional components incur negligible overhead. Our experimental results demonstrate that for irregular memory-intensive workloads, FS-HPT and FS-HPT integrated with the state-of-the-art page table walk technique outperform RPTs by an average of 27.8\% and 61.7\%, respectively.</p>
+    <p><b>DOI:</b> <a href='https://doi.org/10.1145/3656019.3676900' target='_blank'>https://doi.org/10.1145/3656019.3676900</a></p>
+  </details>
+</div>
+<hr>
+<div>
+  <input type='checkbox' id='cb_25' onclick='toggleDone(this, "details_25")'>
+  <label for='cb_25' class='summary-title'>FriendlyFoe: Adversarial Machine Learning as a Practical Architectural Defense against Side Channel Attacks</label>
+  <details id='details_25'>
+    <p><b>Authors:</b> Nam, Hyoungwook; Pothukuchi, Raghavendra Pradyumna; Li, Bo; Kim, Nam Sung; Torrellas, Josep</p>
+    <p><b>Keywords:</b> Hardware security, Machine learning, Side-channel analysis</p>
+    <p><b>Abstract:</b> Machine learning (ML)-based side channel attacks have become prominent threats to computer security. These attacks are often powerful, as ML models easily find patterns in signals. To address this problem, this paper proposes dynamically applying Adversarial Machine Learning (AML) to obfuscate side channels. The rationale is that it has been shown that intelligently injecting an adversarial perturbation can confuse ML classifiers. We call this approach FriendlyFoe and the neural network we introduce to perturb signals FriendlyFoe Defender. FriendlyFoe is a practical, effective, and general architectural technique to obfuscate signals. We show a workflow to design Defenders with low overhead and information leakage, and to customize them for different environments. Defenders are transferable, i.e., they thwart attacker classifiers that are different from those used to train the Defenders. They also resist adaptive attacks, where attackers train using the obfuscated signals collected while the Defender is active. Finally, the approach is general enough to be applicable to different environments. We demonstrate FriendlyFoe against two side channel attacks: one based on memory contention and one on system power. The first example uses a hardware Defender with ns-level response time that, for the same level of security as a Pad-to-Constant scheme, has 27\% and 64\% lower performance overhead for single- and multi-threaded workloads, respectively. The second example uses a software Defender with ms-level response time that reduces leakage by 3.7 \texttimes{} over a state-of-the-art scheme while reducing the energy overhead by 22.5\%.</p>
+    <p><b>DOI:</b> <a href='https://doi.org/10.1145/3656019.3676952' target='_blank'>https://doi.org/10.1145/3656019.3676952</a></p>
+  </details>
+</div>
+<hr>
+<div>
+  <input type='checkbox' id='cb_26' onclick='toggleDone(this, "details_26")'>
+  <label for='cb_26' class='summary-title'>Faster and More Reliable Quantum SWAPs via Native Gates</label>
+  <details id='details_26'>
+    <p><b>Authors:</b> Gokhale, Pranav; Tomesh, Teague; Suchara, Martin; Chong, Fred</p>
+    <p><b>Keywords:</b> </p>
+    <p><b>Abstract:</b> Due to the sparse connectivity of superconducting quantum computers, qubit communication via SWAP gates accounts for the vast majority of overhead in quantum programs. We introduce a method for improving the speed and reliability of SWAPs at the level of the superconducting hardware’s native gateset. Our method relies on four techniques: 1) SWAP Orientation, 2) Cross-Gate Pulse Cancellation, 3) Commutation through Cross-Resonance, and 4) Cross-Resonance Polarity. Importantly, our Optimized SWAP is bootstrapped from the pre-calibrated gates, and therefore incurs zero calibration overhead. We experimentally evaluate our optimizations with Qiskit Pulse on IBM hardware. Our Optimized SWAP is 11\% faster and 13\% more reliable than the Standard SWAP. We also experimentally validate our optimizations on application-level benchmarks. Due to (a) the multiplicatively compounding gains from improved SWAPs and (b) the frequency of SWAPs, we observe typical improvements in success probability of 10–40\%. The Optimized SWAP is available through the Superstaq platform.</p>
+    <p><b>DOI:</b> <a href='https://doi.org/10.1145/3656019.3689818' target='_blank'>https://doi.org/10.1145/3656019.3689818</a></p>
+  </details>
+</div>
+<hr>
+</body>
 </html>
