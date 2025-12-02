@@ -20,49 +20,63 @@
 <script>
 const SCRIPT_URL = "https://script.google.com/macros/s/AKfycbyZdFtTk209VNoO6IPpEZK40iRn-rhAdwAHy2_itaEFRM-MrBNwr1pLsms1O5dk8oDV/exec";
 
-// Fetch all states
+// Fetch all states with CORS support
 async function fetchStates() {
-    const res = await fetch(`${SCRIPT_URL}?func=getStates`);
+  try {
+    const res = await fetch(`${SCRIPT_URL}?func=getStates`, {
+      method: "GET",
+      mode: "cors",
+      headers: { "Content-Type": "application/json" },
+      cache: "no-cache"
+    });
     return await res.json();
+  } catch (err) {
+    console.error("⚠ Failed to fetch states:", err);
+    return {};
+  }
 }
 
 // Update a single checkbox state
 async function updateState(paperId, checked) {
-    const url = `${SCRIPT_URL}?func=updateState&paperId=${paperId}&checked=${checked}`;
-    await fetch(url);
+  try {
+    await fetch(`${SCRIPT_URL}?func=updateState&paperId=${paperId}&checked=${checked}`, {
+      method: "GET",
+      mode: "cors",
+      headers: { "Content-Type": "application/json" }
+    });
+  } catch (err) {
+    console.error("⚠ Failed to update checkbox:", err);
+  }
 }
 
-// Toggle content visibility
-async function toggleContent(cb, blockId) {
-    const block = document.getElementById(blockId);
+// Toggle visibility and save change
+async function toggleContent(cb, id) {
+  const block = document.getElementById(id);
+  const title = block.querySelector('.summary-title');
+  const content = block.querySelector('.paper-content');
+
+  const checked = cb.checked;
+  content.style.display = checked ? 'none' : 'block';
+  title.classList.toggle('done', checked);
+
+  await updateState(id, checked);
+}
+
+// Restore states on page load
+async function restoreState() {
+  const states = await fetchStates();
+
+  document.querySelectorAll('.paper-block').forEach(block => {
+    const id = block.id;
+    const cb = block.querySelector('.toggle-cb');
     const content = block.querySelector('.paper-content');
     const title = block.querySelector('.summary-title');
 
-    if (cb.checked) {
-        content.style.display = 'none';
-        title.classList.add('done');
-    } else {
-        content.style.display = 'block';
-        title.classList.remove('done');
-    }
-
-    await updateState(blockId, cb.checked);
-}
-
-// Restore states from Apps Script
-async function restoreState() {
-    const states = await fetchStates();
-    document.querySelectorAll('.paper-block').forEach(block => {
-        const id = block.id;
-        const cb = block.querySelector('.toggle-cb');
-        const content = block.querySelector('.paper-content');
-        const title = block.querySelector('.summary-title');
-        const checked = states[id] || false;
-
-        cb.checked = checked;
-        content.style.display = checked ? 'none' : 'block';
-        title.classList.toggle('done', checked);
-    });
+    const checked = states[id] || false;
+    cb.checked = checked;
+    content.style.display = checked ? 'none' : 'block';
+    title.classList.toggle('done', checked);
+  });
 }
 
 window.onload = restoreState;
